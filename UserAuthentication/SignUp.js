@@ -17,6 +17,9 @@ export default function SignUp() {
     const [repeatedPassword, setRepeatedPassword] = useState("")
 
     //wymyśl na to lepszy sposób bo przez to czasem są wycieki chociaz useAxiosGet po sobie sporzata
+
+    // 7321
+
     const data = useAxiosGet(ngrokURL + "/users")
 
     const numberOfUsers = data.length

@@ -1,57 +1,64 @@
 import React, { useState } from "react";
-import {Text, View, Button, StyleSheet, Pressable, TextInput, ScrollView, Image} from "react-native";
-import {useNavigation} from "@react-navigation/native";
-import {userAuthenticationStyle} from "../styles/userAuthenticationStyle"
+import {
+  View,
+  TextInput,
+} from "react-native";
+import { userAuthenticationStyle } from "../styles/userAuthenticationStyle";
 import { useCycle } from "framer-motion";
 
-export default function RegistrationForm({usernameChangeHandler, passwordChangeHandler, repeatedPasswordChangeHandler, emailChangeHandler}){
-    const [userFieldStyle, setUserFieldStyle] = useCycle(userAuthenticationStyle.formInput, userAuthenticationStyle.formInputMarked)
-    const [passwordFieldStyle, setPasswordFieldStyle] = useCycle(userAuthenticationStyle.formInput, userAuthenticationStyle.formInputMarked)
-    const [repeatedFieldStyle, setRepeatedPasswordFieldStyle] = useCycle(userAuthenticationStyle.formInput, userAuthenticationStyle.formInputMarked)
-    const [emailFieldStyle, setEmailFieldStyle] = useCycle(userAuthenticationStyle.formInput, userAuthenticationStyle.formInputMarked)
+export default function RegistrationForm({
+    setUsername,
+    setPassword,
+    setRepeatedPassword,
+    setEmail
+}) {
+  const [userFieldStyle, setUserFieldStyle] = useCycle(
+    userAuthenticationStyle.formInput,
+    userAuthenticationStyle.formInputMarked
+  );
+  const [passwordFieldStyle, setPasswordFieldStyle] = useCycle(
+    userAuthenticationStyle.formInput,
+    userAuthenticationStyle.formInputMarked
+  );
+  const [repeatedFieldStyle, setRepeatedPasswordFieldStyle] = useCycle(
+    userAuthenticationStyle.formInput,
+    userAuthenticationStyle.formInputMarked
+  );
+  const [emailFieldStyle, setEmailFieldStyle] = useCycle(
+    userAuthenticationStyle.formInput,
+    userAuthenticationStyle.formInputMarked
+  );
 
-    const changeUserFieldStyle = () => {
-        setUserFieldStyle()
-    }
-
-    const changeEmailFieldStyle = () => {
-        setEmailFieldStyle()
-    }
-
-    const changePasswordFieldStyle = () => {
-        setPasswordFieldStyle()
-    }
-
-    const changeRepeatedPasswordFieldStyle = () => {
-        setRepeatedPasswordFieldStyle()
-    }
-
-    return(
-        <View style={userAuthenticationStyle.container}>
-            <TextInput placeholder={"Username"}
-                       onChangeText={(value) => usernameChangeHandler(value)}
-                       style={userFieldStyle}
-                       onFocus={changeUserFieldStyle}
-                       onBlur={changeUserFieldStyle}
-            />
-            <TextInput placeholder={"E-mail"}
-                       onChangeText={(value) => emailChangeHandler(value)}
-                       style={emailFieldStyle}
-                       onFocus={changeEmailFieldStyle}
-                       onBlur={changeEmailFieldStyle}
-            />
-            <TextInput placeholder={"Password"}
-                       onChangeText={(value) => passwordChangeHandler(value)}
-                       style={passwordFieldStyle}
-                       onFocus={changePasswordFieldStyle}
-                       onBlur={changePasswordFieldStyle}
-            />
-            <TextInput placeholder={"Repeat password"}
-                       onChangeText={(value) => repeatedPasswordChangeHandler(value)}
-                       style={repeatedFieldStyle}
-                       onFocus={changeRepeatedPasswordFieldStyle}
-                       onBlur={changeRepeatedPasswordFieldStyle}
-            />
-        </View>
-    );
+  return (
+    <View style={userAuthenticationStyle.container}>
+      <TextInput
+        placeholder={"Username"}
+        onChangeText={(value) => setUsername(value)}
+        style={userFieldStyle}
+        onFocus={setUserFieldStyle}
+        onBlur={setUserFieldStyle}
+      />
+      <TextInput
+        placeholder={"E-mail"}
+        onChangeText={(value) => setEmail(value)}
+        style={emailFieldStyle}
+        onFocus={setEmailFieldStyle}
+        onBlur={setEmailFieldStyle}
+      />
+      <TextInput
+        placeholder={"Password"}
+        onChangeText={(value) => setPassword(value)}
+        style={passwordFieldStyle}
+        onFocus={setPasswordFieldStyle}
+        onBlur={setPasswordFieldStyle}
+      />
+      <TextInput
+        placeholder={"Repeat password"}
+        onChangeText={(value) => setRepeatedPassword(value)}
+        style={repeatedFieldStyle}
+        onFocus={setRepeatedPasswordFieldStyle}
+        onBlur={setRepeatedPasswordFieldStyle}
+      />
+    </View>
+  );
 }

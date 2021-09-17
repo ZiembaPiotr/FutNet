@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/FutNet.iml" filepath="$PROJECT_DIR$/.idea/FutNet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserAuthentication/UserAuthentication.iml" filepath="$PROJECT_DIR$/UserAuthentication/UserAuthentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/customHooks/customHooks.iml" filepath="$PROJECT_DIR$/customHooks/customHooks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/screens/screens.iml" filepath="$PROJECT_DIR$/screens/screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharedComponents/sharedComponents.iml" filepath="$PROJECT_DIR$/sharedComponents/sharedComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/styles/styles.iml" filepath="$PROJECT_DIR$/styles/styles.iml" />
+    </modules>
+  </component>
+</project>
